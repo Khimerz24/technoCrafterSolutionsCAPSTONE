@@ -44,6 +44,7 @@ body {
 	background-color: var(--white);
 	font-size: 1.6rem; /* 26px */
 	height: 300vh;
+	overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 li {
@@ -124,11 +125,15 @@ button {
 /* START OF HEADER */
 /* Navigation */
 .main-nav {
-	background-color: var(--main-blue); /* Adjust color as needed */
-	display: flex; /* Make the nav a flex container */
-	justify-content: space-between; /* Space items to opposite ends */
-	align-items: center; /* Vertically center the items */
-	padding: 20px 20px; /* Optional horizontal padding */
+	position: sticky; /* Makes it stick to the top */
+	top: 0; /* Sticks to the top of the viewport */
+	z-index: 1000; /* Ensure it stays above other elements */
+	background-color: var(--main-blue); /* Retain the background color */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
 /* Social Icons in a Row */
@@ -142,26 +147,28 @@ button {
 	color: var(--white);
 	font-size: 1.7rem; /* Adjust icon size */
 	text-decoration: none;
-	/* border: var(--white) 1px solid; */
 	border-radius: 50%;
-	/* background-color: #fff; */
 }
 
 .top-bar {
 	display: flex; /* Enables side-by-side layout */
 	align-items: center; /* Vertically centers the items */
 	padding: 10px 20px;
-	/* border: red 1px solid;; */
 	color: white;
 	background: linear-gradient(
 			90deg,
 			var(--gradient-blue),
 			var(--gradient-mid),
 			var(--gradient-green)
-		), url("/img/palengke.jpg");
+		), url("img/palengke.jpg");
 
 	background-size: cover;
-	background-position: center; /* Adjust as needed for spacing */
+	background-position: center;
+	background-color: var(--main-blue); /* Adjust as needed */
+	padding: 20px;
+	text-align: center;
+	color: var(--white);
+	z-index: 999; /* Adjust as needed for spacing */
 }
 
 .logo-container {
@@ -288,7 +295,7 @@ button {
 			var(--gradient-blue),
 			var(--gradient-mid),
 			var(--gradient-green)
-		), url("/img/headerBG.jpg");
+		), url("img/headerBG.jpg");
 	position: relative;
 	overflow: visible;
 	background-size: cover;
@@ -360,7 +367,7 @@ button {
 	text-align: center;
 	padding: 200px 20px;
 	position: relative;
-	background: url("/img/FTS.jpg");
+	background: url("img/FTS.jpg");
 	/* border: red 1px solid; */
 }
 
@@ -473,7 +480,7 @@ button {
 /* Full‑width Section with Side Background Image and White Tint */
 .circles-section {
 	position: relative;
-	background: url("/img/FTS.jpg") no-repeat center center;
+	background: url("img/FTS.jpg") no-repeat center center;
 	background-size: cover;
 	padding: 100px 0; /* Vertical spacing – adjust as needed */
 }
@@ -510,7 +517,7 @@ button {
 
 /* Circle Button Styles */
 .circle-button {
-	background: url("/img/ClockTowerTawiran.jpg") no-repeat center center / cover;
+	background: url("img/ClockTowerTawiran.jpg") no-repeat center center / cover;
 	border-radius: 50%;
 	width: 300px;
 	height: 300px;
@@ -1087,7 +1094,7 @@ textarea::placeholder {
 			var(--gradient-blue),
 			var(--gradient-mid),
 			var(--gradient-green)
-		), url("/img/footerBlue.png");
+		), url("img/footerBlue.png");
 	background-color: var(--main-blue); /* Deep blue */
 	width: 100%;
 	height: 100vh;
