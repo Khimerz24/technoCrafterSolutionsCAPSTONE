@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Preconnect for improved loading performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Link to the Google Fonts stylesheet for Roboto (regular and bold) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Remixi Icon (for fb logo, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+        integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <!-- Stock image for city seal/logo -->
+                <img src="img/webheaderlogo.png" alt="City Seal" class="logo" width="200px" />
+            </div>
+            <div class="text-container">
+                <h2>WELCOME TO
+                </h2>
+                <h1>
+                    BALIWAG CITY
+                </h1>
+                <h3>THE OFFICIAL WEB PORTAL OF THE CITY GOVERNMENT OF BALIWAG</h3>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu - Moved outside of header for sticky behavior -->
+    <nav class="main-nav">
+        <div class="social-icons">
+            <a class="social-link" href="https://www.facebook.com/FerdieVEstrella" target="_blank"><i
+                    class="ri-facebook-circle-fill"></i></a>
+            <a class="social-link" href="https://www.instagram.com/ferdieviceoestrella/" target="_blank"><i
+                    class="ri-instagram-line"></i></a>
+            <a class="social-link" href="_" target="_blank"><i class="ri-mail-line"></i></a>
+            <a class="social-link" href="_" target="_blank"><i class="ri-phone-line"></i></a>
+        </div>
+
+        <ul>
+            <li><a class="nav-link" href="home.html">Home</a></li>
+            <li><a class="nav-link" href="events-page.html">Events</a></li>
+            <li><a class="nav-link" href="#">Business Directory</a></li>
+            <li><a class="nav-link" href="#">Announcements</a></li>
+            <li><a class="nav-link" href="#">Registration Forms</a></li>
+            <li>
+                <a class="nav-link" href="#">About Us <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-content">
+                    <a href="#mission">Our Mission</a>
+                    <a href="#team">Team</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <br>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero / Banner Section -->
+        <section class="hero-section">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1 class="heading-1">Selebrasyon</h1>
+                    <h1 class="heading-2">Buntal Hat</h1>
+                    <h1 class="heading-3">Festival</h1>
+                    <h1 class="heading">May <span class="number">26</span> </h1>
+
+
+                </div>
+
+                <!-- You can use a background image in CSS or an <img> tag here -->
+                <div class="image-container">
+                    <!-- Stock image for the painting or festival image -->
+                    <img src="img/festivalPainting.png" class="tilted-image" alt="Festival Painting" />
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="circles-section">
+            <!-- Centered white container that holds the circles -->
+            <div class="circle-container">
+                <div class="circle-buttons">
+                    <div class="circle-button">
+                        <h2>CAFE & RESTAURANTS</h2>
+                        <button class="visit-btn">Visit</button>
+                    </div>
+                    <div class="circle-button middle">
+                        <h2>TOURIST SPOT</h2>
+                        <button class="visit-btn">Visit</button>
+                    </div>
+                    <div class="circle-button">
+                        <h2>SERVICES</h2>
+                        <button class="visit-btn">Visit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="dashboard">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Announcements Section -->
+                <div class="announcements">
+                    <div class="section-header">
+                        <h2>Announcements</h2>
+                    </div>
+                    <div class="announcements-content">
+                        <div class="announcements-grid">
+                            <!-- Street Dance -->
+                            <div class="announcement-card">
+                                <div class="announcement-image"
+                                    style="background-image: url('./img/festivalEvent.jpg')"></div>
+                                <p>The most awaited Street Dance is happening!</p>
+                            </div>
+
+                            <!-- Basketball Champions -->
+                            <div class="announcement-card">
+                                <div class="announcement-image"
+                                    style="background-image: url('img/basketballEvent.jpg')"></div>
+                                <p>Barrangay Concepcion got the spot in the championship!</p>
+                            </div>
+
+                            <!-- Concert -->
+                            <div class="announcement-card">
+                                <div class="announcement-image" style="background-image: url('img/concertEvent.jpg')">
+                                </div>
+                                <p>Enjoy the concert with different artist!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Calendar -->
+                <div class="events-calendar">
+                    <div class="calendar-header">
+                        <h2>Events Calendar</h2>
+                    </div>
+                    <div class="calendar-content">
+                        <div class="calendar-grid">
+                            <!-- First row of months -->
+                            <div class="month-header">JANUARY</div>
+                            <div class="month-header">FEBRUARY</div>
+                            <div class="month-header">MARCH</div>
+                            <div class="month-header">APRIL</div>
+                            <div class="month-header">MAY</div>
+                            <div class="month-header">JUNE</div>
+
+                            <!-- First row of events -->
+                            <div class="event-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="empty-block"></div>
+
+                            <!-- Second row of events -->
+                            <div class="event-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="empty-block"></div>
+
+                            <!-- Second row of months -->
+                            <div class="month-header">JULY</div>
+                            <div class="month-header">AUGUST</div>
+                            <div class="month-header">SEPTEMBER</div>
+                            <div class="month-header">OCTOBER</div>
+                            <div class="month-header">NOVEMBER</div>
+                            <div class="month-header">DECEMBER</div>
+
+                            <!-- Third row of events -->
+                            <div class="empty-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="event-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+
+                            <!-- Fourth row of events -->
+                            <div class="empty-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="event-block"></div>
+                            <div class="empty-block"></div>
+                            <div class="empty-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Cafe Section -->
+                <div class="info-section">
+                    <div class="info-section-bg" style="background-image: url('img/Cafe.jpg')">
+                    </div>
+                    <div class="info-section-content">
+                        <h2>CAFE</h2>
+                        <p>PLACE TO RELAX!</p>
+                    </div>
+                </div>
+
+                <!-- Tourist Spot Section -->
+                <div class="info-section">
+                    <div class="info-section-bg" style="background-image: url('img/Travels.jpg')">
+                    </div>
+                    <div class="info-section-content">
+                        <h2>TOURIST SPOT </h2>
+                        <p>PLACES TO GO!</p>
+
+                    </div>
+                </div>
+
+                <!-- Hospital Section -->
+                <div class="info-section">
+                    <div class="info-section-bg" style="background-image: url('img/Hospital.jpg')">
+                    </div>
+                    <div class="info-section-content">
+                        <h2>HOSPITAL</h2>
+                        <p>SERVICES!</p>
+                    </div>
+                </div>
+
+                <!-- City Image -->
+                <div class="city-image" style="background-image: url('img/ClockTowerTawiran.jpg')"></div>
+            </div>
+        </div>
+
+
+        <div class="offers-container">
+            <h1>BALIWAG OFFERS</h1>
+            <div class="offer-cards">
+                <!-- Card 1 -->
+                <div class="offer-card">
+                    <div class="offer-image"></div>
+                    <p>Other Stores</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="offer-card">
+                    <div class="offer-image"></div>
+                    <p>Tourist Spot!</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="offer-card">
+                    <div class="offer-image"></div>
+                    <p>Public Services</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <section>
+
+            <div class="feedback-container">
+                <h2>Got a Question? Feedback?</h2>
+                <textarea placeholder="Type it here...."></textarea>
+                <button class="submit-btn">Submit</button>
+            </div>
+
+            <div class="hotlines-wrapper">
+                <!-- Title -->
+                <h2 class="hotlines-title">Emergency Hotlines</h2>
+
+                <!-- Hotline Cards -->
+                <div class="hotlines-container">
+                    <!-- Card 1 -->
+                    <div class="hotline-card">
+                        <div class="icon"><i class="ri-phone-fill"></i></div>
+                        <h3>BALIWAG HOTLINE</h3>
+                        <p>0917-505-7827<br>0939-999-7827</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="hotline-card">
+                        <div class="icon"><i class="ri-phone-fill"></i></div>
+                        <h3>BALIWAG PNP</h3>
+                        <p>0955-423-1181<br>0933-876-5386</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="hotline-card">
+                        <div class="icon"><i class="ri-phone-fill"></i></div>
+                        <h3>BALIWAG BFP</h3>
+                        <p>(044)764-7658<br>0942-352-7440<br>0963-303-5238</p>
+                    </div>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="contact-us">
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+    <br>
+    <footer>
+        <div class="header">Contact Us</div>
+
+        <div class="container">
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Events</a>
+                <a href="#">Business Directory</a>
+                <a href="#">Announcements</a>
+                <a href="#">Registration Forms</a>
+                <a href="#">About Us ></a>
+            </div>
+            <img src="img/webheaderlogo.png" alt="Baliwag City Seal" class="seal">
+        </div>
+    </footer>
+</body>
+
+</html>
