@@ -24,6 +24,11 @@
 	--white: hsl(0, 0%, 100%);
 	--black: hsl(0, 0%, 0%);
 	--overlay: hsla(0, 0%, 0%, 0.5);
+
+	--font-1: "Inter", sans-serif;
+	--font-2: "Roboto", sans-serif;
+	--font-3: "DM Sans", sans-serif;
+	--font-4: "DM Serif Display", serif;
 }
 
 * {
@@ -33,7 +38,7 @@
 }
 
 html {
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-family: var(--font-2);
 	font-size: 10px;
 	scroll-behavior: smooth;
 }
@@ -101,10 +106,14 @@ h4,
 h5,
 h6 {
 	margin-bottom: 0.5em;
+	font-weight: 1000;
+	line-height: 1.3;
+	font-family: var(--font-3);
 }
 
 p {
 	margin-bottom: 1em;
+	font-size: 1.6rem; /* 26px */
 }
 
 input,
@@ -1086,7 +1095,7 @@ textarea::placeholder {
 
 /* “Contact Us” styling */
 .contact-us {
-	color: #05b63d;
+	color: #2aca32;
 	font-size: 1rem;
 	margin-top: 1px;
 }
@@ -1115,7 +1124,7 @@ textarea::placeholder {
 	text-align: center;
 	font-size: 24px;
 	font-weight: bold;
-	color: #00a000; /* Green */
+	color: var(--main-green); /* Green */
 }
 
 .menu {
