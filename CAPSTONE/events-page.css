@@ -111,22 +111,25 @@
 	display: inline;
 }
 
-.image-container {
+.festival-image {
+	transform: rotate(3deg); /* Tilts the image by 3deg */
+	transition: transform 0.3s ease;
+	margin-top: 500px;
 	width: 400px;
 	position: absolute;
 	overflow: visible;
 	bottom: 0;
+	color: violet;
 	right: 0;
+	z-index: 2;
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center;
 }
 
-.tilted-image {
-	transform: rotate(3deg); /* Tilts the image by 3deg */
-	transition: transform 0.3s ease;
-	margin-top: 500px;
-}
-
-.tilted-image:hover {
-	transform: rotate(0deg); /* Optional: Reset tilt when hovered */
+.festival-image:hover {
+	transform: rotate(-3deg);
+	/* Optional: Reset tilt when hovered */
 }
 
 /* Festival section specific styles */
@@ -137,19 +140,9 @@
 	overflow: visible;
 }
 
-/* Modify image container for festival section */
-.festival-image {
-	width: 400px;
-	position: absolute;
-	overflow: visible;
-	bottom: 0;
-	right: 0;
-	z-index: 2;
-}
-
 .festival-image img {
 	transform: rotate(3deg);
-	margin-top: 100px; /* Adjust this value to make the image overlap */
+	margin: 0;
 }
 
 /* Event Cards Section */
@@ -343,12 +336,13 @@
 /* Green Header Banner */
 .events-header {
 	background-color: var(--main-green);
-	padding: 15px 0;
+
 	text-align: center;
 	height: 100px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	display: flex;
+	justify-content: center; /* Centers horizontally */
 	align-items: center;
-	justify-content: center;
 	position: relative;
 	margin-top: -50px;
 	width: 70%;
@@ -360,6 +354,7 @@
 .events-header h2 {
 	color: white;
 	font-size: 3.7rem;
+	margin: 0;
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -405,6 +400,8 @@
 .feedback-section {
 	padding: 30px;
 	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
 	background-color: #f5f5f5;
 }
 
@@ -427,24 +424,27 @@ textarea {
 }
 
 .submit-btn {
-	background-color: var(--main-blue);
-	color: white;
-	border: none;
-	padding: 10px 30px;
-	font-size: 2.1rem;
-	font-weight: bold;
-	border-radius: 4px;
-	margin: 0 auto;
-	width: 174px;
-	height: 60px;
+	color: #fff; /* Adjust text color for better contrast */
+	padding: 0.7em 1.7em;
+	border-radius: 0.5em;
+	background: var(--main-blue); /* Set background to main blue */
 	cursor: pointer;
-	transition: background-color 0.3s;
+	border: 1px solid var(--main-blue); /* Match border with background */
+	transition: all 0.3s;
+	font-size: 2rem;
+	margin: 0 auto;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.submit-btn:active {
+	color: #ccc; /* Optional: Slightly dim text color on click */
+	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
 .submit-btn:hover {
-	background-color: #00008b;
+	background-color: #00008b; /* Retain hover effect */
+	color: white; /* Ensure text remains white on hover */
 }
-
 /* Emergency Hotlines */
 .hotlines-section {
 	padding: 20px 0;
