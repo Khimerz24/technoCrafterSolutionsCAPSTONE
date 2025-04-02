@@ -1,4 +1,4 @@
-@url ('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
 	/* Primary colors */
 	--main-blue: #1326af;
@@ -1105,7 +1105,7 @@ textarea::placeholder {
 			90deg,
 			var(--gradient-blue),
 			var(--gradient-mid),
-			var(--gradient-green)
+			var(--gradient-blue)
 		), url("img/footerBlue.png");
 	background-color: var(--main-blue); /* Deep blue */
 	width: 100%;
@@ -1132,15 +1132,16 @@ textarea::placeholder {
 	text-align: left;
 	position: absolute;
 	left: 15%;
-	top: 40%;
+
 }
 
 .menu a {
 	display: block;
 	color: white;
-	font-size: 20px;
+	font-size: 24px;
 	text-decoration: none;
-	margin: 15px 0;
+	margin-right: 40px;
+	margin: 30px;
 }
 
 .menu a:hover {
@@ -1151,5 +1152,6 @@ textarea::placeholder {
 	position: absolute;
 	right: 15%;
 	top: 30%;
-	width: 200px;
+	width: 312px;
+height: 312px;
 }
