@@ -24,11 +24,6 @@
 	--white: hsl(0, 0%, 100%);
 	--black: hsl(0, 0%, 0%);
 	--overlay: hsla(0, 0%, 0%, 0.5);
-
-	--font-1: "Inter", sans-serif;
-	--font-2: "Roboto", sans-serif;
-	--font-3: "DM Sans", sans-serif;
-	--font-4: "DM Serif Display", serif;
 }
 
 * {
@@ -38,7 +33,7 @@
 }
 
 html {
-	font-family: var(--font-2);
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 10px;
 	scroll-behavior: smooth;
 }
@@ -46,9 +41,7 @@ html {
 body {
 	line-height: 1.6;
 	color: var(--neutral-700); /* typically gray */
-	background-color: var(--white);
-	font-size: 1.6rem; /* 26px */
-	height: 300vh;
+    background-color: var(--main-green); /* Deep blue background */	font-size: 1.6rem; /* 26px */
 	overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -106,14 +99,10 @@ h4,
 h5,
 h6 {
 	margin-bottom: 0.5em;
-	font-weight: 1000;
-	line-height: 1.3;
-	font-family: var(--font-3);
 }
 
 p {
 	margin-bottom: 1em;
-	font-size: 1.6rem; /* 26px */
 }
 
 input,
@@ -170,7 +159,7 @@ button {
 			var(--gradient-blue),
 			var(--gradient-mid),
 			var(--gradient-green)
-		), url("img/headerBG.jpg");
+		), url("img/palengke.jpg");
 
 	background-size: cover;
 	background-position: center;
@@ -293,100 +282,155 @@ button {
 .main-nav .nav-link:hover i {
 	color: var(--main-blue); /* Change arrow color on hover */
 }
-/* Hero Section */
-.hero {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 20px;
-	color: white;
-	background: linear-gradient(
+
+/* Main Content Styles */
+.main-nav {
+    display: flex;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: white;
+    color: #0033cc;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+.main-content {
+    background-color: var(--main-green);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Updated title bar styles to match the image */
+.title-bar-container {
+    width: 100%;
+    background-color: rgb(250, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+
+.page-title {
+    background-color: var(--main-blue);
+    color: white;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+    margin: 0;
+    position: relative;
+    top: 20px;
+}
+
+.login-container {
+    background-color: rgb(250, 250, 250);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.login-text {
+    color: #002699;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #e6e6e6;
+}
+
+.login-button {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 8px 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.login-link {
+    background-color: #e6e6e6;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #ede5e5;
+    text-decoration: none;
+}
+
+
+/* Footer Styles */
+.footer-separator {
+    height: 50px;
+    background-color: var(--main-blue);
+    margin-top: 100px;
+}
+
+.footer {
+    background-color: #081f5b; /* Darker shade on hover */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(246, 245, 248);
+    height: 615px;
+    width: 1440x;
+    align-items: center;
+    background: linear-gradient(
 			90deg,
-			var(--gradient-blue),
+			var(--gradient-green),
 			var(--gradient-mid),
 			var(--gradient-green)
-		), url("img/headerBG.jpg");
-	position: relative;
-	overflow: visible;
-	background-size: cover;
-	background-position: center;
-	margin-top: 80px; /* Adjust as needed for spacing */
+		), url("img/footer\ green.png");
+
 }
 
-.hero-text {
-	align-items: center;
-	margin: 10px 120px; /* Original margins */
-	/* Adds spacing between the logo and the text */
-	text-align: center;
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.hero-text h1 {
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-	text-align: left;
-	line-height: 0.7;
+.footer-link {
+    color: rgb(251, 248, 248);
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-size: 24px;
+	margin-left: 162px;
+	;
 }
 
-.heading-1 {
-	font-size: 6rem;
-	margin-top: 60px;
+.footer-link:hover {
+    text-decoration: underline;
 }
 
-.heading-2 {
-	font-size: 10rem;
-	margin-left: -24px;
-	margin-right: -24px;
-}
-
-.heading-3 {
-	font-size: 6rem;
-	margin-left: 208px;
-	margin-right: 208px;
-}
-
-.heading {
-	font-size: 6rem;
-	margin-left: 129px;
-	margin-right: 129px;
-}
-
-.number {
-	font-size: 10rem;
-	display: inline;
-}
-
-.image-container {
-	width: 400px;
-	position: absolute;
-	overflow: visible;
-	bottom: 0;
-	right: 0;
-}
-
-.tilted-image {
-	transform: rotate(3deg); /* Tilts the image by 3deg */
-	transition: transform 0.3s ease;
-	margin-top: 500px;
-}
-
-.tilted-image:hover {
-	transform: rotate(0deg); /* Optional: Reset tilt when hovered */
-}
-
-/* Main Content Styling */
-.main-content {
-	text-align: center;
-	padding: 200px 20px;
-	position: relative;
-	background: url("img/FTS.jpg");
-	/* border: red 1px solid; */
-}
-
-.main-content::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(255, 255, 255, 0.7); /* White overlay with 70% opacity */
+.footer-logo {
+    width: 312px;
+    height: 312px;
+    margin-right: 200px;
 }
