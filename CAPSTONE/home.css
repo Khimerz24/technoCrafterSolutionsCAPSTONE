@@ -664,19 +664,40 @@ button {
 }
 
 .section-header {
-	background-color: #0000b0;
-	color: white;
-	padding: 16px;
+	background-color: var(--main-blue);
+	color: var(--white);
+	text-align: center;
+	height: 100px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center;
+	position: relative;
+	margin-top: -50px;
+	width: 70%;
+	z-index: 99;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .section-header h2 {
-	font-size: 24px;
+	color: white;
+	font-size: 3.7rem;
+	margin: 0;
 	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 .announcements-content {
-	background-color: #5cb82a;
-	padding: 16px;
+	background: linear-gradient(
+			90deg,
+			var(--gradient-green),
+			var(--gradient-green),
+			var(--gradient-green)
+		), url("img/FTS.jpg");
+	margin-top: -50px;
+	padding: 150px;
 }
 
 .announcements-grid {
@@ -693,11 +714,12 @@ button {
 /* Left and Right Images - Landscape */
 .announcement-card:nth-child(1) .announcement-image,
 .announcement-card:nth-child(3) .announcement-image {
-	width: auto; /* Adjusts width automatically */
-	height: 160px; /* Landscape height */
+	width: 100%; /* Adjusts width automatically */
+	height: 260px; /* Landscape height */
 	background-color: #ddd;
-	margin-bottom: 8px;
-	border-radius: 8px;
+	margin-bottom: 12px;
+	object-fit: cover; /* Prevents stretching */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 	background-size: cover; /* Ensures the image covers the container */
 	background-position: center; /* Centers the image */
 	background-repeat: no-repeat; /* Prevents image repetition */
@@ -705,47 +727,110 @@ button {
 
 /* Center Image - Portrait */
 .announcement-card:nth-child(2) .announcement-image {
-	width: auto; /* Adjusts width automatically */
-	height: 240px; /* Portrait height */
+	width: 100%; /* Adjusts width automatically */
+	height: 440px; /* Portrait height */
 	background-color: #ddd;
-	margin-bottom: 8px;
-	border-radius: 8px;
+	margin-bottom: 12px;
+	object-fit: cover; /* Prevents stretching */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+	/* margin-left: 50px;
+	margin-right: 50px; */
 	background-size: cover; /* Ensures the image covers the container */
 	background-position: center; /* Centers the image */
 	background-repeat: no-repeat; /* Prevents image repetition */
 }
 
 .announcement-card p {
-	font-size: 1.2rem;
+	font-size: 1.7rem;
 	text-align: center;
-	font-style: italic;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 	color: var(--black);
+	margin-left: 50px;
+	font-weight: bolder;
+	margin-right: 50px;
 	background-color: white !important;
 	padding: 10px;
 }
 
-/* Events Calendar */
+.announcement-image img {
+	width: 100%; /* Ensures image scales within the container */
+	height: auto; /* Maintains aspect ratio */
+	object-fit: cover; /* Prevents stretching */
+	background-size: cover;
+	background-position: center;
+}
+
+/* Adjust grid for responsiveness */
+@media (max-width: 768px) {
+	.announcements-grid {
+		grid-template-columns: repeat(2, 1fr); /* Reduce columns for smaller screens */
+	}
+
+	.announcement-card:nth-child(2) .announcement-image {
+		height: 380px; /* Adjust portrait image height */
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.announcements-grid {
+		grid-template-columns: 1fr; /* Stack items vertically on mobile */
+	}
+
+	.announcement-card .announcement-image {
+		height: auto; /* Allow images to resize naturally */
+	}
+}
+
+/* Events Calendar Section */
+.events {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -120px;
+	height: calc(100% + 250px); /* Increase the height by 250px */
+}
+
 .events-calendar {
-	border: 2px solid #0000b0;
+	border: 4px solid var(--main-blue);
 	overflow: hidden;
+	background-color: var(--main-blue);
+	width: 100%;
+	height: calc(100% + 250px); /* Increase the height by 250px */
 }
 
 .calendar-header {
-	background-color: #0000b0;
-	color: white;
-	padding: 16px;
+	background-color: var(--main-blue);
+	color: var(--white);
+	padding: 20px 15px;
 	text-align: center;
+	font-size: 3.7rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.calendar-grid:last-of-type {
+	border-bottom: none;
+}
+
+.month {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
 
 .calendar-content {
 	background-color: white;
 	padding: 16px;
+	height: calc(100% + 250px); /* Adjust height for additional space */
 }
 
 .calendar-grid {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 8px;
+	margin-bottom: 16px;
 }
 
 .month-header {
@@ -759,7 +844,6 @@ button {
 .event-block {
 	height: 48px;
 	width: 100%;
-
 	background-color: #ddd;
 }
 
@@ -767,195 +851,76 @@ button {
 	height: 48px;
 	width: 100%;
 }
-/* Main dashboard container */
-.dashboard {
-	display: grid;
-	grid-template-columns: 1fr 1fr; /* Two equal columns */
-	gap: 0; /* Remove gap between columns to eliminate white line */
-	margin: 0 auto;
-	height: 100%; /* Ensure overall container stretches */
-}
 
-/* Left and Right columns are equal in height */
-.left-column,
-.right-column {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	height: 100%; /* Matches the column heights */
-}
-
-/* Right column specific adjustments */
-.right-column {
-	display: grid;
-	grid-template-rows: repeat(3, 1fr); /* Three equal rows for sections */
-	gap: 0; /* Removes spaces between sections */
-	position: relative;
-	width: 100%;
-	height: 100%; /* Ensures it matches the height of the left column */
-}
-
-/* Info sections within the right column */
-.info-section {
-	position: relative;
-	height: 100%; /* Ensures sections expand evenly */
-	overflow: hidden;
-}
-
-.info-section-bg {
-	width: 100%;
-	height: 100%;
-	background-color: #ddd;
-	background-size: cover; /* Scales background image */
-	background-position: center; /* Centers the image */
-	position: relative; /* Necessary for the ::after pseudo-element */
-	transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
-}
-
-/* Add zoom effect on hover */
-.info-section:hover .info-section-bg {
-	transform: scale(1.35);
-	cursor: pointer;
-}
-
-/* Black tint applied as an overlay */
-.info-section-bg::after {
-	content: ""; /* Creates the overlay */
-	position: absolute;
-	top: 0; /* Covers the entire section */
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.4); /* Black tint with 25% opacity */
-	z-index: 1; /* Ensures the tint is above the image */
-	pointer-events: none; /* Overlay does not interfere with interaction */
-}
-
-/* Adjust text placement slightly to the left */
-.info-section-content {
-	position: absolute;
-	top: 0;
-	left: 10%; /* Moves text slightly to the left */
-	width: 80%; /* Keeps text centered overall */
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start; /* Aligns text to the left */
-	justify-content: center;
-	color: white;
-	text-align: left; /* Text alignment to the left */
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-	padding-left: 10px; /* Adds extra space for text placement */
-}
-
-.info-section-content h2 {
-	font-size: 36px;
-	font-weight: bold;
-	margin: 0;
-}
-
-.info-section-content p {
-	font-size: 18px;
-	font-weight: 600;
-	margin: 0;
-}
-
-/* City image as part of the collage */
-.city-image {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 28%; /* Adjust width as per your layout */
-	height: 100%; /* Matches the full container height */
-	background-color: #ddd;
-	background-size: cover; /* Ensures the image fills the container */
-	background-position: center;
-	z-index: 10;
-	border: none; /* No gaps or outlines */
-}
-
-/* Remove extra padding and margin globally */
-.right-column,
-.info-section,
-.city-image {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-/* Info sections background images with black tint overlay */
-
-/* Black tint applied as an overlay */
-
-/* Text placement remains on top of the image and tint */
-.info-section-content {
-	position: absolute;
-	top: 0;
-	left: 10%; /* Moves text slightly to the left */
-	width: 80%; /* Keeps text within the section */
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start; /* Aligns text to the left */
-	justify-content: center;
-	color: white; /* White text for contrast */
-	text-align: left;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-	padding-left: 10px; /* Adds spacing to the left */
-	z-index: 2; /* Places text above the tint layer */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-	.dashboard {
-		grid-template-columns: 1fr; /* Stacks columns vertically */
+/* Responsive styles */
+@media (max-width: 700px) {
+	.calendar-grid {
+		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.right-column {
-		grid-template-rows: auto; /* Makes rows auto-stack */
-	}
-
-	.city-image {
-		display: none; /* Hides city image on smaller screens */
-	}
-
-	.info-section-content {
-		left: 5%; /* Adjust text position for smaller screens */
-		width: 90%; /* Reduces text container width */
-		padding-left: 5px;
+	.calendar-grid:nth-child(1) {
+		border-bottom: none;
 	}
 }
 
-/* City image as part of the collage */
+@media (max-width: 500px) {
+	.calendar-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-/* Remove white gaps globally for tight layout */
+	.month-header {
+		font-size: 12px;
+	}
 
-/* Responsive adjustments */
-
-/* Container for the entire layout */
-.offers-container {
-	max-width: 1000px;
-	margin: 0 auto;
-	text-align: center;
-	padding: 20px;
+	.event-block {
+		height: 60px;
+	}
 }
 
 /* Heading styling */
-.offers-container h1 {
-	color: #0a2e83;
-	text-transform: uppercase;
-	font-size: 1.8rem;
-
-	margin-bottom: 40px;
-	letter-spacing: 1px;
+.offers-container {
+	background-color: #fff7f7;
+	padding-bottom: 50px;
 }
 
+.offers-header {
+	background-color: var(--main-blue);
+	color: var(--white);
+	text-align: center;
+	height: 100px; /* Ensure enough height for centering */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center; /* Centers vertically */
+	position: relative;
+	margin-bottom: 60px;
+	margin-top: 60px;
+	width: 100%;
+	z-index: 99;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1; /* Prevents extra spacing caused by line height */
+	font-size: 2.5rem; /* Adjust font size as needed */
+	font-weight: bold; /* Ensure the text is bold */
+	text-transform: uppercase; /* Optional: Make the text uppercase */
+	padding: 0; /* Ensure no padding affects centering */
+}
+
+.offers-header h1 {
+	color: var(--white);
+	font-size: 3.7rem;
+	background-color: transparent; /* Remove background if unnecessary */
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0; /* Remove default margin */
+	line-height: 1; /* Prevent extra spacing */
+}
 /* Wrapper for the three cards */
 .offer-cards {
 	display: flex;
 	flex-wrap: wrap; /* Allows wrapping on smaller screens */
 	justify-content: center; /* Centers the cards horizontally */
-	gap: 20px; /* Space between cards */
+	gap: 50px; /* Space between cards */
 }
 
 /* Each individual card container */
@@ -966,6 +931,16 @@ button {
 	width: 250px; /* Adjust as needed */
 }
 
+/* The text below each box */
+.offer-card p {
+	color: var(--main-blue);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2.3rem;
+	margin-top: 30px;
+	text-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
 /* The gray box */
 .offer-image {
 	background-color: #cccccc;
@@ -973,131 +948,165 @@ button {
 	height: 400px; /* Adjust as needed */
 	border: 1px solid #999999;
 	margin-bottom: 10px;
+	display: flex; /* Ensures the image aligns properly */
+	justify-content: center; /* Centers the image horizontally */
+	align-items: center; /* Centers the image vertically */
+	overflow: hidden; /* Ensures any overflow is hidden */
 }
 
-/* The text below each box */
-.offer-card p {
-	color: #0a2e83;
-	text-transform: uppercase;
+.offer-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Ensures the image covers the container without stretching */
+	object-position: center; /* Centers the image within the container */
+}
+
+/* Feedback Section */
+.feedback-section {
+	padding: 30px;
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background-color: #f5f5f5;
+}
+
+.feedback-title {
+	color: var(--main-blue);
+	font-size: 18px;
+	margin-left: -280px;
 	font-weight: bold;
-	font-size: 1rem;
-	margin-top: 10px;
 }
 
-/* Container for the entire feedback section */
-.feedback-container {
-	max-width: 600px;
-	margin: 0 auto;
-}
-
-/* Title or question prompt */
-.feedback-container h2 {
-	color: #0a2e83;
-	margin-bottom: 10px;
-	font-size: 1.2rem; /* Adjust as needed */
-}
-
-/* Text area styling */
 textarea {
 	width: 100%;
-	height: 200px; /* Adjust as needed */
-	background-color: #cccccc;
-	border: 1px solid #999999;
-	border-radius: 4px;
+	max-width: 500px;
+	height: 100px;
 	padding: 10px;
-	font-size: 16px;
-	color: #333;
-	resize: none; /* Prevent resizing if desired */
-	margin-bottom: 20px;
-	outline: none;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	resize: none;
+	background-color: #e0e0e0;
 }
 
-/* Placeholder text styling (for modern browsers) */
-textarea::placeholder {
-	color: #666666;
-}
-
-/* Submit button styling */
 .submit-btn {
-	background-color: #0a2e83; /* Blue color */
-	color: #ffffff;
-	border: none;
-	padding: 20px 34px;
+	color: #fff; /* Adjust text color for better contrast */
+	padding: 0.7em 1.7em;
+	background: var(--main-blue); /* Set background to main blue */
 	cursor: pointer;
-	font-size: 16px;
-	border-radius: 4px;
+	border: 1px solid var(--main-blue); /* Match border with background */
+	transition: all 0.3s;
+	font-size: 2rem;
+	margin: 0 auto;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.submit-btn:active {
+	color: #ccc; /* Optional: Slightly dim text color on click */
+	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
 .submit-btn:hover {
-	background-color: #081f5b; /* Darker shade on hover */
+	background-color: #00008b; /* Retain hover effect */
+	color: white; /* Ensure text remains white on hover */
 }
-
-.hotlines-wrapper {
-	text-align: center; /* center text inside */
-}
-
-/* Section title styling */
-.hotlines-title {
-	align-items: center;
-	display: inline-block;
-	background-color: #099a37; /* Green background */
-	color: #ffffff; /* White text */
-	font-size: 1.5rem;
-	padding: 10px 30px;
-	border-radius: 8px;
-}
-
-/* Container for the hotline cards */
-.hotlines-container {
-	display: flex;
-	flex-wrap: wrap; /* responsive for smaller screens */
-	justify-content: center;
-	gap: 20px;
-	margin-bottom: 40px; /* space before the “Contact Us” text */
-}
-
-/* Individual hotline card */
-.hotline-card {
-	background-color: #a4cfa4; /* Light green background */
-	border-radius: 8px;
-	width: 220px;
-	padding: 20px;
+/* Emergency Hotlines */
+.hotlines-section {
+	padding: 20px 0;
+	background-color: #f5f5f5;
 	text-align: center;
 }
 
-/* Phone icon container */
-.icon {
+.hotlines-header {
+	width: 259px;
+	margin: -16px auto;
+}
+
+.hotlines-header h3 {
+	display: inline-block;
+	background-color: var(--main-green);
+	color: white;
+	padding: 15px 30px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-size: 2.0rem;
+	width: 100%;
+	max-width: 260px;
+
+	font-weight: bold;
+}
+
+.hotlines-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 20px;
+	padding: 0 20px;
+}
+
+.hotline-card {
+	background-color: #a4cfa4;
+	padding: 20px;
+	width: 260px;
+	text-align: center;
+}
+
+.phone-icon {
 	width: 40px;
 	height: 40px;
-	margin: 0 auto 10px; /* center + space below icon */
 	background-color: var(--main-blue);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #ffffff;
-	font-size: 1.2rem;
+	margin: 0 auto 10px;
 }
 
-/* Hotline label (e.g., BALIWAG HOTLINE) */
-.hotline-card h3 {
-	font-size: 1rem;
-	color: var(--main-blue); /* A darker green for text */
-	margin-bottom: 1px;
+.phone-icon i {
+	color: white;
+	font-size: 20px;
 }
 
-/* Hotline numbers */
-.hotline-card p {
-	font-size: 1rem;
+.hotline-card h4 {
 	color: var(--main-blue);
-	line-height: 1.4;
+	font-size: 16px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
-/* “Contact Us” styling */
+.hotline-card p {
+	color: var(--main-blue);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
 .contact-us {
-	color: #2aca32;
-	font-size: 1rem;
-	margin-top: 1px;
+	margin-top: 20px;
+	color: var(--main-green);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+	.event-announcement {
+		flex-direction: column;
+	}
+
+	.event-image {
+		margin-right: 0;
+		margin-bottom: 20px;
+		flex: 0 0 100%;
+	}
+
+	.hotlines-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hotline-card {
+		width: 100%;
+		max-width: 260px;
+	}
 }
 
 .container {
