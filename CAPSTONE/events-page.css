@@ -396,55 +396,6 @@
 	color: #333;
 }
 
-/* Feedback Section */
-.feedback-section {
-	padding: 30px;
-	text-align: center;
-	margin-top: 60px;
-	margin-bottom: 60px;
-	background-color: #f5f5f5;
-}
-
-.feedback-title {
-	color: var(--main-blue);
-	font-size: 18px;
-	margin-left: -280px;
-	font-weight: bold;
-}
-
-textarea {
-	width: 100%;
-	max-width: 500px;
-	height: 100px;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	resize: none;
-	background-color: #e0e0e0;
-}
-
-.submit-btn {
-	color: #fff; /* Adjust text color for better contrast */
-	padding: 0.7em 1.7em;
-	border-radius: 0.5em;
-	background: var(--main-blue); /* Set background to main blue */
-	cursor: pointer;
-	border: 1px solid var(--main-blue); /* Match border with background */
-	transition: all 0.3s;
-	font-size: 2rem;
-	margin: 0 auto;
-	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-}
-
-.submit-btn:active {
-	color: #ccc; /* Optional: Slightly dim text color on click */
-	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-}
-
-.submit-btn:hover {
-	background-color: #00008b; /* Retain hover effect */
-	color: white; /* Ensure text remains white on hover */
-}
 /* Emergency Hotlines */
 .hotlines-section {
 	padding: 20px 0;
@@ -462,9 +413,12 @@ textarea {
 	background-color: var(--main-green);
 	color: white;
 	padding: 15px 30px;
-	border-top-left-radius: 34px;
-	border-top-right-radius: 34px;
-	font-size: 2.1rem;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-size: 2.0rem;
+	width: 100%;
+	max-width: 260px;
+
 	font-weight: bold;
 }
 
@@ -538,6 +492,6 @@ textarea {
 
 	.hotline-card {
 		width: 100%;
-		max-width: 300px;
+		max-width: 260px;
 	}
 }
