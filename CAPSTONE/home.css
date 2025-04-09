@@ -456,7 +456,6 @@ button {
 	height: 608px;
 	max-width: 100%;
 	padding: 100px 0; /* Vertical spacing – adjust as needed */
-
 }
 
 .circles-section::before {
@@ -469,7 +468,6 @@ button {
 	/* Adjust opacity for desired tint (0.5 means 50%) */
 	background: rgba(255, 255, 255, 0.5);
 	z-index: 1;
-	
 }
 
 .circle-container {
@@ -504,7 +502,6 @@ button {
 	overflow: hidden;
 	margin: 0 10px;
 }
-
 
 /* Green tint overlay on each circle */
 .circle-button::before {
@@ -874,6 +871,78 @@ button {
 	  .month-december   { left: 1082px; top: 457px; width: 131px; }
 
 
+.calendar-grid:last-of-type {
+	border-bottom: none;
+}
+
+.month {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.calendar-content {
+	background-color: white;
+	padding: 16px;
+	height: calc(100% + 250px); /* Adjust height for additional space */
+}
+
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.month-header {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0000b0;
+	margin-bottom: 8px;
+}
+
+.event-block {
+	height: 48px;
+	width: 100%;
+	background-color: #ddd;
+}
+
+.empty-block {
+	height: 48px;
+	width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+	.calendar-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.calendar-grid:nth-child(1) {
+		border-bottom: none;
+	}
+}
+
+@media (max-width: 500px) {
+	.calendar-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.month-header {
+		font-size: 12px;
+	}
+
+	.event-block {
+		height: 60px;
+	}
+}
+
+/* Heading styling */
+.offers-container {
+	background-color: #fff7f7;
+	padding-bottom: 50px;
+}
 
 .offers-header {
     background-color: var(--main-blue);
@@ -1026,15 +1095,25 @@ button {
 
 textarea {
 	width: 100%;
-	max-width: 500px;
-	height: 100px;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
+	max-width: 800px; /* Increased from 500px */
+	height: 200px; /* Increased from 100px */
+	padding: 20px; /* Increased from 10px */
+	margin-bottom: 30px; /* Increased from 15px */
+	border: 2px solid #ccc; /* Increased border width */
 	resize: none;
 	background-color: #e0e0e0;
+	font-size: 1.8rem; /* Added larger font size */
+	line-height: 1.6;
+	border-radius: 8px; /* Added rounded corners */
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle inner shadow */
 }
 
+/* Add focus state for better interaction */
+textarea:focus {
+	outline: none;
+	border-color: var(--main-blue);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 5px rgba(19, 38, 175, 0.3);
+}
 .submit-btn {
 	color: #fff; /* Adjust text color for better contrast */
 	padding: 0.7em 1.7em;
