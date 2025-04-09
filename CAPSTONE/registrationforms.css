@@ -255,47 +255,7 @@ button {
 	border-radius: 10px;
 }
 
-/* Dropdown Menu Styling */
-.dropdown-content {
-	display: none; /* Hidden by default */
-	position: absolute;
-	top: 100%; /* Positioned below the "About Us" link */
-	left: 0;
-	background-color: var(--white);
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	min-width: 200px;
-	border-radius: 10px;
-}
 
-.dropdown-content a {
-	color: var(--main-blue);
-	padding: 10px 15px;
-	display: block;
-	text-decoration: none;
-}
-
-.dropdown-content a:hover {
-	background-color: var(--main-blue);
-	color: var(--white);
-	border-radius: 10px;
-}
-
-/* Show dropdown on hover */
-.main-nav li:hover .dropdown-content {
-	display: block;
-}
-
-/* Dropdown arrow styling */
-.main-nav .nav-link i {
-	margin-left: 5px; /* Space between "About Us" text and arrow */
-	font-size: 14px; /* Icon size */
-	color: var(--white); /* Match color with link */
-}
-
-.main-nav .nav-link:hover i {
-	color: var(--main-blue); /* Change arrow color on hover */
-}
 
 /* Main Content Styles */
 .main-nav {

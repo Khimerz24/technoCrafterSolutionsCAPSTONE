@@ -1,472 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
-	/* Primary colors */
-	--main-blue: #1326af;
-	--gradient-blue: rgba(19, 38, 175, 0.9);
-	--gradient-mid: rgba(30, 189, 184, 0.5);
-	--gradient-green: rgba(42, 202, 50, 0.6);
-	--sub-blue: #0318b1;
-	--main-green: #2aca32;
-	--green-fern: #4fb60a;
+.meow {
+    text-align: center;
+    color: #002884;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 
-	/* Neutral colors */
-	--neutral-100: hsl(0, 0%, 95%);
-	--neutral-200: hsl(0, 0%, 85%);
-	--neutral-300: hsl(0, 0%, 75%);
-	--neutral-400: hsl(0, 0%, 65%);
-	--neutral-500: hsl(0, 0%, 55%);
-	--neutral-600: hsl(0, 0%, 45%);
-	--neutral-700: hsl(0, 0%, 35%);
-	--neutral-800: hsl(0, 0%, 25%);
-	--neutral-900: hsl(0, 0%, 15%);
+  .meow::after {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 2px;
+    background-color: #002884;
+    margin: 10px auto 30px;
+  }
 
-	/* Additional common colors */
-	--white: hsl(0, 0%, 100%);
-	--black: hsl(0, 0%, 0%);
-	--overlay: hsla(0, 0%, 0%, 0.5);
+  .ann {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-	--font-1: "Inter", sans-serif;
-	--font-2: "Roboto", sans-serif;
-	--font-3: "DM Sans", sans-serif;
-	--font-4: "DM Serif Display", serif;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	font-family: var(--font-2);
-	font-size: 10px;
-	scroll-behavior: smooth;
-}
-
-body {
-	line-height: 1.6;
-	color: var(--neutral-700); /* typically gray */
-	background-color: var(--white);
-	font-size: 1.6rem; /* 26px */
-	height: 300vh;
-	overflow-x: hidden; /* Prevent horizontal scrolling */
-	
-}
-
-li {
-	list-style: none;
-}
-
-a,
-img,
-span,
-input,
-button,
-ion-icon {
-	display: block;
-}
-
-a {
-	color: inherit; /** adapts to its parent color */
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-ul,
-ol {
-	margin: 0 0 1em 2em;
-}
-
-img {
-	max-width: 100%;
-	height: auto; /**allows images to scale properly and maintain their natural proportions.*/
-}
-
-input,
-button {
-	background: none;
-	border: none;
-	font: inherit;
-}
-
-input {
-	width: 100%;
-}
-
-button {
-	cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 0.5em;
-	font-weight: 1000;
-	line-height: 1.3;
-	font-family: var(--font-3);
-}
-
-p {
-	margin-bottom: 1em;
-	font-size: 1.6rem; /* 26px */
-}
-
-input,
-textarea,
-select,
-button {
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-
-.clearfix::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-/* START OF HEADER */
-/* Navigation */
-.main-nav {
-	position: sticky; /* Makes it stick to the top */
-	top: 0; /* Sticks to the top of the viewport */
-	z-index: 1000; /* Ensure it stays above other elements */
-	background-color: var(--main-blue); /* Retain the background color */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-	width: 100%; /* Ensure it spans the full width */
-}
-
-/* Social Icons in a Row */
-.social-icons {
-	display: flex; /* This places icons in a single row */
-	gap: 10px; /* Optional spacing between icons */
-}
-
-/* Optional: Style the social icons */
-.social-icons a {
-	color: var(--white);
-	font-size: 1.7rem; /* Adjust icon size */
-	text-decoration: none;
-	border-radius: 50%;
-}
-
-.top-bar {
-	display: flex; /* Enables side-by-side layout */
-	align-items: center; /* Vertically centers the items */
-	padding: 10px 20px;
-	color: white;
-	background: linear-gradient(
-			90deg,
-			var(--gradient-blue),
-			var(--gradient-mid),
-			var(--gradient-green)
-		), url("img/palengke.jpg");
-
-	background-size: cover;
-	background-position: center;
-	background-color: var(--main-blue); /* Adjust as needed */
-	padding: 20px;
-	text-align: center;
-	color: var(--white);
-	z-index: 999; /* Adjust as needed for spacing */
-}
-
-.logo-container {
-	flex-shrink: 0; /* Prevents the logo from shrinking */
-}
-
-.text-container {
-	margin-left: 10px;
-	/* Adds spacing between the logo and the text */
-}
-
-.text-container h2 {
-	font-size: 2cap;
-	text-align: left;
-
-	line-height: 0.5; /* Adjust font size as needed */
-	margin: 0; /* Remove default margin */
-}
-
-.text-container h1 {
-	font-size: 6rem; /* Adjust font size as needed */
-	line-height: 1.1; /* Adjust font size as needed */
-	text-align: left;
-	margin: 0; /* Remove default margin */
-}
-
-.text-container h3 {
-	font-size: 1.6rem;
-	/* Adjust font size as needed */
-	margin: 0; /* Remove default margin */
-}
-
-/* Navigation Links */
-.main-nav ul {
-	list-style-type: none;
-	display: flex;
-	margin: 0;
-	padding: 0;
-}
-
-.main-nav li {
-	position: relative; /* Enables positioning for dropdown */
-	margin: 0 10px;
-}
-
-.main-nav a.social-link {
-	display: block;
-	padding: 5px 10px;
-	color: var(--main-blue);
-	background-color: var(--white);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.main-nav a.nav-link {
-	display: block;
-	padding: 5px 10px;
-	color: var(--white);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.main-nav a.social-link:hover {
-	color: var(--white);
-	background-color: var(--main-blue);
-}
-
-.main-nav a.nav-link:hover {
-	background-color: var(--white);
-	color: var(--main-blue);
-	border-radius: 10px;
-}
-
-/* Dropdown Menu Styling */
-.dropdown-content {
-	display: none; /* Hidden by default */
-	position: absolute;
-	top: 100%; /* Positioned below the "About Us" link */
-	left: 0;
-	background-color: var(--white);
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	min-width: 200px;
-	border-radius: 10px;
-}
-
-.dropdown-content a {
-	color: var(--main-blue);
-	padding: 10px 15px;
-	display: block;
-	text-decoration: none;
-}
-
-.dropdown-content a:hover {
-	background-color: var(--main-blue);
-	color: var(--white);
-	border-radius: 10px;
-}
-
-/* Show dropdown on hover */
-.main-nav li:hover .dropdown-content {
-	display: block;
-}
-
-/* Dropdown arrow styling */
-.main-nav .nav-link i {
-	margin-left: 5px; /* Space between "About Us" text and arrow */
-	font-size: 14px; /* Icon size */
-	color: var(--white); /* Match color with link */
-}
-
-.main-nav .nav-link:hover i {
-	color: var(--main-blue); /* Change arrow color on hover */
-}
-.announcements-title {
-	color: #0a2aa5;
-	text-align: center;
-	font-size: 4rem;
-	font-weight: bold;
-	margin: 20px 0;
-}
-
-.announcements-container {
-	display: flex;
-	gap: 25px;
-	margin-bottom: 25px;
-}
-
-.announcement-image {
-	width: 714px;
-	height: 504px;
-	background-color: #dcdcdc;
-	margin-left: 100px;
-}
-
-.announcement-text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 462px;
-	
-}
-
-.text-line {
-	height: 31px;
-	background-color: #dcdcdc;
-	margin-bottom: 10px;
-	width: 100%;
-	margin-left: 70px;
-}
-
-.divider {
-	height: 1px;
-	background-color: #0a2aa5;
-	margin: 0 0 25px 0;
-	width: 100%;
-}
-
-.news-title {
-	color: #0a2aa5;
-	text-align: center;
-	font-size: 4rem;
-	font-weight: bold;
-	margin: 20px 0;
-	margin-top: 70px;
-	margin-bottom: 50px;
-}
-
-.news-container {
-	display: flex;
-	justify-content: space-between;
-	margin-right: 100px;
-	margin-left: 50px;
-	gap: 15px;
-	margin-bottom: 20px;
-}
-
-.news-item {
-	width: 217px;
-}
-
-.news-image {
-	width: 260px;
-	height: 322px;
-	background-color: #dcdcdc;
-	margin-bottom: 15px;
-}
-
-.news-text-line {
-	height: 18px;
-	background-color: #dcdcdc;
-	margin-bottom: 8px;
-	width: 100%;
-	margin-left: 20px;
-}
-.page-container {
-	width: 100%;
+  .image-frame {
 	position: relative;
-}
-.follow-us-container {
-	background-color: #4CD964;
-	border-radius: 25px;
-	padding: 15px 0;
-	width: 500px;
-	height: 150px;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 250px;
+	margin-right: 20px;
+	border: 2px solid #002884;
+	padding: 10px;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
+  .image-frame img {
+    display: block;
+    width: 500px;
+    height: auto;
+  }
 
-}
+  .green-box {
+    position: absolute;
+    top: 40px;
+    left: 480px;
+    background-color: #66d20f;
+    color: white;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
 
-.follow-us-title {
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-}
-
-.social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-}
-
-.social-icon {
-	width: 50px;
-	height: 50px;
-	background-color: white;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px;
-}
-
-.social-icon i {
-	font-size: 40px;
-	color: #4CD964;
-}
-.white-space {
-	height: 100px; /* Adjust this value to control the amount of white space */
-	width: 100%;
-	background-color: white;
-}
-
-
-.footer {
-    background-color: #081f5b; /* Darker shade on hover */
-    padding: 30px 20px;
-    display: flex;
-    justify-content: space-between;
-    color: rgb(246, 245, 248);
-    height: 615px;
-    width: 1440x;
-    align-items: center;
-    background: linear-gradient(
-			90deg,
-			var(--gradient-blue),
-			var(--gradient-mid),
-			var(--gradient-blue)
-		), url("img/footerBlue.png");
-
-}
-
-.footer-nav {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.footer-link {
-    color: rgb(251, 248, 248);
-    text-decoration: none;
-    margin-bottom: 40px;
-    font-size: 24px;
-	margin-left: 162px;
-	;
-}
-
-.footer-link:hover {
-    text-decoration: underline;
-}
-
-.footer-logo {
-    width: 312px;
-    height: 312px;
-	margin-right: 150px;
-}
+  .blue-box {
+    position: absolute;
+    top: 100px;
+    left: 480px;
+    background-color: #0026a3;
+    color: white;
+    padding: 20px 25px;
+    font-size: 16px;
+    width: 360px;
+    line-height: 1.4;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
