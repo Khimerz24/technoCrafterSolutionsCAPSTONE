@@ -1,61 +1,185 @@
 .meow {
     text-align: center;
     color: #002884;
-    font-size: 32px;
+    font-size: 60px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 50px;
   }
 
   .meow::after {
     content: '';
     display: block;
-    width: 180px;
+    width: 700px;
     height: 2px;
     background-color: #002884;
     margin: 10px auto 30px;
   }
 
   .ann {
-    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+    padding: 20px 0;
+    margin-left: 120px;
   }
-
+  
   .im-frame {
-	position: relative;
-	margin-right: 20px;
-	border: 2px solid #eef0f5;
-	padding: 10px;
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    width: 630px;
+    height: 440px;
+    background-color: #0026a3;
+    padding: 0; /* Remove padding since we have border on the image */
+    margin: 30px;
+    margin-left: 160px;
   }
+  
   .im-frame img {
-    display: block;
-    width: 500px;
+    
+    width: 630px;
+    height: 440px;
     height: auto;
+    position: relative; /* Enable positioning context */
+    right: -30px; /* Move left instead of using margin */
+    bottom: -30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block; /* Removes any extra space below the image */
   }
+   
+  
 
   .green-box {
     position: absolute;
-    top: 40px;
-    left: 480px;
+    top: 600px;
+    left: 819px;
     background-color: #66d20f;
     color: white;
-    padding: 15px 25px;
+    padding: 10px 35px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   }
 
   .blue-box {
     position: absolute;
-    top: 100px;
-    left: 480px;
+    top: 660px;
+    left: 819px;
     background-color: #0026a3;
     color: white;
     padding: 20px 25px;
-    font-size: 16px;
-    width: 360px;
+    font-size: 30px;
+    width: 600px;
     line-height: 1.4;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   }
+
+  .offers-header {
+    margin-top: 150px
+}
+
+/* Centering the card layout */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* Styling individual cards */
+.card {
+  width: 260px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Sections */
+.card .top,
+.card .bottom {
+  height: 40%;
+  flex-shrink: 0;
+}
+
+.card .middle {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(254, 253, 253);
+  border: 1px solid var(--main-blue);
+}
+
+/* Example image card styling */
+.image-card .middle {
+  background: none;
+}
+.image-card .middle img {
+  height: 400px;
+  width: 260px;
+  border-radius: 4px;
+}
+
+/* Color schemes for card types */
+.card.blue .top,
+.card.blue .bottom {
+  background: #003cff;
+}
+.card.green .top,
+.card.green .bottom {
+  background: #28d763;
+}
+
+.follow-us-container {
+  background-color: #4CD964;
+  border-radius: 25px;
+  width: 700px;
+  height: 112px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+
+.follow-us-title {
+  color: white;
+  font-size: 24;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.social-icon i {
+  font-size: 30px;
+  color: #4CD964;
+}

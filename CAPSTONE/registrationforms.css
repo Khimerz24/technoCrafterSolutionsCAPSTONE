@@ -469,6 +469,7 @@ textarea {
 	background-color: #f5f5f5;
 	text-align: center;
 	margin-bottom: 0;
+	margin-top: 100px;
 }
 
 .hotlines-header {
@@ -535,10 +536,12 @@ textarea {
 }
 
 .contact-us {
+	margin-top: 20px;
 	color: var(--main-green);
-	margin-top: 0;
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: bold;
+	text-align: center;
+	
 }
 
 /* Responsive Styles */
