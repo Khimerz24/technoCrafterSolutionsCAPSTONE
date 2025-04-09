@@ -27,7 +27,7 @@
         <div class="top-bar">
             <div class="logo-container">
                 <!-- Stock image for city seal/logo -->
-                <img src="CAPSTONE/img/webheaderlogo.png" alt="City Seal" class="logo" width="200px" />
+                <img src="img/webheaderlogo.png" alt="City Seal" class="logo" width="200px" />
             </div>
             <div class="text-container">
                 <h2>WELCOME TO
@@ -54,9 +54,9 @@
         <ul>
             <li><a class="nav-link" href="home.html">Home</a></li>
             <li><a class="nav-link" href="events-page.html">Events</a></li>
-            <li><a class="nav-link" href="#">Business Directory</a></li>
-            <li><a class="nav-link" href="#">Announcements</a></li>
-            <li><a class="nav-link" href="#">Registration Forms</a></li>
+            <li><a class="nav-link" href="businessDirectory.html">Business Directory</a></li>
+            <li><a class="nav-link" href="">Announcements</a></li>
+            <li><a class="nav-link" href="registrationforms.html">Registration Forms</a></li>
             <li>
                 <a class="nav-link" href="#">About Us <i class="ri-arrow-down-s-line"></i></a>
                 <div class="dropdown-content">
@@ -76,30 +76,21 @@
             <p>Registration forms from the City Hall Of<span class="highlight">Baliwag</span></p>
         </div>
     </div>
-    
 
-    <div class="card-container">
-        <button class="card-button" onclick="openApplicationForm()" aria-label="Open application form">
-          <div class="card">
-            <div class="icon-box">
-              <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2h-7l-2-2H5c-1.1 0-2 .9-2 2z"/>
-              </svg>
-            </div>
-            <div class="card-content">
-              <h3>Application Form</h3>
-              <p>Please click the icon to fill up</p>
-            </div>
-          </div>
-        </button>
+    <div class="application-container">
+        <div class="icon-section" onclick="alert('Application form would open here')">
+          <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="white"></path>
+          </svg>
+        </div>
+        <div class="content-section">
+          <h2>Application Form</h2>
+          <p>Please Click the icon to fill up</p>
+        </div>
       </div>
     
-      <script>
-        function openApplicationForm() {
-          alert('Opening application form...');
-          // You can replace this with your actual form opening logic
-        }
-      </script>
+    
+      
 
       <section class="feedback-section">
 
@@ -121,27 +112,25 @@
                         <div class="hotline-card">
                             <div class="phone-icon"><i class="ri-phone-fill"></i></div>
                             <h4>BALIWAG HOTLINE</h4>
-                            <p>0917-505-7827<br>0939-999-7827</p>
+                            <h4>0917-505-7827<br>0939-999-7827</h4>
                         </div>
 
                         <!-- Hotline Card 2 -->
                         <div class="hotline-card">
                             <div class="phone-icon"><i class="ri-phone-fill"></i></div>
                             <h4>BALIWAG PNP</h4>
-                            <p>0955-423-1181<br>0933-876-5386</p>
+                            <h4>0955-423-1181<br>0933-876-5386</h4>
                         </div>
 
                         <!-- Hotline Card 3 -->
                         <div class="hotline-card">
                             <div class="phone-icon"><i class="ri-phone-fill"></i></div>
                             <h4>BALIWAG BFP</h4>
-                            <p>(044)764-7658<br>0942-352-7440<br>0963-303-5238</p>
+                            <h4>(044)764-7658<br>0942-352-7440<br>0963-303-5238</h4>
                         </div>
                     </div>
-
-
                 </div>
-
+                <div class="contact-us">Contact Us</div>
             </section>
 
         </main>
@@ -150,8 +139,6 @@
 
         <br>
         <footer>
-            <div class="header">Contact Us</div>
-    
             <div class="container">
                 <div class="menu">
                     <a href="#">Home</a>
@@ -159,9 +146,9 @@
                     <a href="#">Business Directory</a>
                     <a href="#">Announcements</a>
                     <a href="#">Registration Forms</a>
-                    <a href="#">About Us ></a>
+                    <a href="#">About Us </a>
                 </div>
-                <img src="CAPSTONE/img/webheaderlogo.png" alt="Baliwag City Seal" class="seal">
+                <img src="img/webheaderlogo.png" alt="Baliwag City Seal" class="seal">
             </div>
         </footer>
     </body>

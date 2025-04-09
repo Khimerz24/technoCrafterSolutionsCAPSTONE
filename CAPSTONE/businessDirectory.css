@@ -1,160 +1,139 @@
-.business-directory-header {
-	background-color: var(--main-blue);
-	color: var(--white);
+.Directory {
+	background-color: #0026b3;
+	color: white;
+	padding: 30px 0;
 	text-align: center;
-	height: 100px; /* Ensure enough height for centering */
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	display: flex;
-	justify-content: center; /* Centers horizontally */
-	align-items: center; /* Centers vertically */
-	position: relative;
-	margin-bottom: 60px;
-	margin-top: 25px;
-	width: 100%;
-	background: linear-gradient(
-			90deg,
-			var(--gradient-blue),
-			var(--gradient-mid),
-			var(--gradient-blue)
-		), url("img/palengke.jpg");
-	background-position: 50% 70%;
-	background-size: cover; /* Ensure the image covers the entire area */
-	z-index: 99;
-	margin-left: auto;
-	margin-right: auto;
-	line-height: 1; /* Prevents extra spacing caused by line height */
-	font-size: 2.5rem; /* Adjust font size as needed */
-	font-weight: bold; /* Ensure the text is bold */
-	padding: 0; /* Ensure no padding affects centering */
-}
-.business-directory-header h1 {
-	color: var(--white);
-	font-size: 3.7rem;
-	background-color: transparent; /* Remove background if unnecessary */
+	font-size: 75px;
 	font-weight: bold;
-	margin: 0; /* Remove default margin */
-	line-height: 1; /* Prevent extra spacing */
-}
+	margin-top: 25px;
+	margin-bottom: 45px;
 
-.dashboard {
-	border: 1px solid #ccc;
-	padding: 20px;
-}
+  }
 
-/* Profile avatars at the top */
-.profile-avatars {
+  .category-bar {
+	background-color: #1cc144;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	border-top: 4px solid #ffffff;
+	border-bottom: 4px solid #1cc144;
+  }
+
+  .buttons-container {
 	display: flex;
-	justify-content: space-between;
-	max-width: 400px;
-	margin-bottom: 40px;
-}
-
-.avatar {
-	width: 200px;
-	height: 200px;
-	background-color: #a5a5a5;
-	border-radius: 50%; /* Keeps the avatar circular */
-	flex-shrink: 0; /* Prevents shrinking on smaller screens */
-	margin: 0 20px;
-}
-
-/* Spotlight section */
-.spotlight-section {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-	margin-bottom: 40px;
-}
-
-.spotlight {
-	display: flex;
-	gap: 30px;
-	margin-bottom: 40px;
-}
-
-.hero-image {
-	width: 180px;
-	height: 250px;
-	background-color: #a5a5a5;
-	flex-shrink: 0; /* Prevents shrinking */
-}
-
-.description {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	gap: 15px; /* Adds spacing between rows */
+	align-items: center;
+	gap: 100px;
+	padding: 50px 0px;
+  }
+
+  .category-button {
+	background-color: #f0f0f0;
+	width: 244px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	padding: 15px 25px;
+	font-weight: bold;
+	color: #0026b3;
+	cursor: pointer;
+	transition: transform 0.2s;
+  }
+
+  .category-button:hover {
+	transform: scale(1.05);
+  }
+
+  .bottom-border {
+	border-top: 2px solid #0026b3;
+	width: 90%;
+	margin: auto;
+  }
+  .Common-business {
+	background-color: #0026b3;
+	color: white;
+	padding: 30px 0;
+	text-align: center;
+	font-size: 75px;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 45px;
+  }
+
+
+  
+
+  .cont {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 
-.description-row {
-	height: 15px;
-	background-color: #a5a5a5;
-	margin-bottom: 15px;
-
-	width: 100%;
-}
-
-.button {
-	width: 100px;
-	height: 30px;
-	background-color: #a5a5a5;
-	margin-top: 10px;
-}
-
-/* Gallery section */
-.gallery {
+.business-card {
 	display: flex;
-	justify-content: space-between;
-	gap: 15px;
-	margin-bottom: 50px;
+	padding: 30px 0;
+	border-bottom: 1px solid #e0e0e0;
+	background-color: white;
 }
 
-.thumbnail {
-	width: 90px;
-	height: 90px;
-	background-color: #a5a5a5;
-	flex-grow: 1;
+.pics-container {
+	flex: 0 0 180px;
+	padding: 0 20px;
 }
 
-.title-placeholder {
-	width: 330px; /* Width of the button */
-	height: 50px; /* Height of the button */
-	background-color: #a5a5a5; /* Placeholder color */
+.pics {
+	border: 10px solid #0a1e8f;
+	width: 370px;
+	height: 370px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	margin: 0 auto; /* Center the button */
-	margin-top: 150px; /* Optional: spacing from other elements */
+	overflow: hidden;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-	.profile-avatars {
-		flex-direction: column;
-		align-items: center;
-	}
+.pics img {
+	max-width: 100%;
+	max-height: 100%;
+}
 
-	.avatar {
-		width: 150px; /* Adjust size for smaller screens */
-		height: 150px;
-	}
+.business-info {
+	flex: 1;
+	padding-right: 20px;
+}
 
-	.spotlight {
-		flex-direction: column;
-		align-items: center;
-	}
+.business-name {
+	color: #0a1e8f;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-left: 50px;
+}
 
-	.hero-image {
-		width: 100%; /* Full width for smaller screens */
-	}
+.business-description {
+	color: #0a1e8f;
+	font-size: 24px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+	margin-left: 55px;
+}
 
-	.gallery {
-		flex-wrap: wrap;
-	}
+.view-button {
+	background-color: #0a1e8f;
+	color: white;
+	padding: 5px 5px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 24px;
+	width: 400px;
+	margin-top: 120px;
+	margin-left: 270px;
+	
 
-	.thumbnail {
-		width: calc(50% - 10px); /* Adjust size for smaller screens */
-	}
+
+}
+
+.view-button:hover {
+	background-color: #051367;
 }

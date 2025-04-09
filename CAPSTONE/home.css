@@ -252,47 +252,7 @@ button {
 	border-radius: 10px;
 }
 
-/* Dropdown Menu Styling */
-.dropdown-content {
-	display: none; /* Hidden by default */
-	position: absolute;
-	top: 100%; /* Positioned below the "About Us" link */
-	left: 0;
-	background-color: var(--white);
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	min-width: 200px;
-	border-radius: 10px;
-}
 
-.dropdown-content a {
-	color: var(--main-blue);
-	padding: 10px 15px;
-	display: block;
-	text-decoration: none;
-}
-
-.dropdown-content a:hover {
-	background-color: var(--main-blue);
-	color: var(--white);
-	border-radius: 10px;
-}
-
-/* Show dropdown on hover */
-.main-nav li:hover .dropdown-content {
-	display: block;
-}
-
-/* Dropdown arrow styling */
-.main-nav .nav-link i {
-	margin-left: 5px; /* Space between "About Us" text and arrow */
-	font-size: 14px; /* Icon size */
-	color: var(--white); /* Match color with link */
-}
-
-.main-nav .nav-link:hover i {
-	color: var(--main-blue); /* Change arrow color on hover */
-}
 /* Hero Section */
 .hero {
 	display: flex;
@@ -781,159 +741,270 @@ button {
 		height: auto; /* Allow images to resize naturally */
 	}
 }
+    .events-calendar-container {
+      max-width: 100%;
+      margin: 50px auto;
+      background: rgb(8, 8, 84);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 51, 160, 0.5);
+      padding: 0 30px 40px;
+
+    }
+
+    .title-bar {
+      text-align: center;
+      color: white;
+      background-color: #e7e9ec;
+      padding: 15px 0;
+      border-radius: 6px 6px 0 0;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .month {
+      color: #0033a0;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .month.december {
+      background: none;
+      padding: 0;
+    }
+
+    .month.december img {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .bottom-section {
+      height: 100px;
+      background: #dcdcdc;
+      border-radius: 6px;
+    }
+	.events-calendar-container {
+		position: relative;
+		width: 1312px;
+		height: 992px;
+		justify-content: center;
+	  }
+  
+	  .background-layer {
+		background: #101e86;
+		border-radius: 20px;
+		width: 1312px;
+		height: 992px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	  }
+  
+	  .calendar-panel {
+		background: #ffffff;
+		border-radius: 20px;
+		width: 1266px;
+		height: 968px;
+		position: absolute;
+		left: 23px;
+		top: 0;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	  }
+  
+	  .header-bar {
+		background: #101e86;
+		border-radius: 20px;
+		width: 1312px;
+		height: 150px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	  }
+  
+	  .title {
+		color: #ffffff;
+		text-align: center;
+		font-family: "Roboto-ExtraBold", sans-serif;
+		font-size: 40px;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		position: absolute;
+		left: 460px;
+		width: 391px;
+		height: 23px;
+	  }
+  
+	  .month {
+		color: #0318b1;
+		text-align: left;
+		font-family: "DmSans-Black", sans-serif;
+		font-size: 24px;
+		font-weight: 900;
+		position: absolute;
+		height: 30px;
+	  }
+  
+	  .month-january    { left: 104px;  top: 189px; width: 118px; }
+	  .month-february   { left: 301px;  top: 189px; width: 125px; }
+	  .month-march      { left: 511px;  top: 189px; width: 92px;  }
+	  .month-april      { left: 717px;  top: 189px; width: 74px;  }
+	  .month-may        { left: 922px;  top: 189px; width: 58px;  }
+	  .month-june       { left: 1115px; top: 183px; width: 65px;  }
+	  .month-july       { left: 133px;  top: 454px; width: 60px;  }
+	  .month-august     { left: 314px;  top: 454px; width: 100px; }
+	  .month-september  { left: 484px;  top: 457px; width: 146px; }
+	  .month-october    { left: 695px;  top: 457px; width: 118px; }
+	  .month-november   { left: 892px;  top: 457px; width: 136px; }
+	  .month-december   { left: 1082px; top: 457px; width: 131px; }
 
 
-
-.calendar-grid:last-of-type {
-	border-bottom: none;
-}
-
-.month {
-	display: flex;
-	flex-direction: column;
-	padding: 10px;
-}
-
-.calendar-content {
-	background-color: white;
-	padding: 16px;
-	height: calc(100% + 250px); /* Adjust height for additional space */
-}
-
-.calendar-grid {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	gap: 8px;
-	margin-bottom: 16px;
-}
-
-.month-header {
-	text-align: center;
-	font-size: 12px;
-	font-weight: bold;
-	color: #0000b0;
-	margin-bottom: 8px;
-}
-
-.event-block {
-	height: 48px;
-	width: 100%;
-	background-color: #ddd;
-}
-
-.empty-block {
-	height: 48px;
-	width: 100%;
-}
-
-/* Responsive styles */
-@media (max-width: 700px) {
-	.calendar-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.calendar-grid:nth-child(1) {
-		border-bottom: none;
-	}
-}
-
-@media (max-width: 500px) {
-	.calendar-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.month-header {
-		font-size: 12px;
-	}
-
-	.event-block {
-		height: 60px;
-	}
-}
-
-/* Heading styling */
-.offers-container {
-	background-color: #fff7f7;
-	padding-bottom: 50px;
-}
 
 .offers-header {
-	background-color: var(--main-blue);
-	color: var(--white);
-	text-align: center;
-	height: 100px; /* Ensure enough height for centering */
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	display: flex;
-	justify-content: center; /* Centers horizontally */
-	align-items: center; /* Centers vertically */
-	position: relative;
-	margin-bottom: 60px;
-	margin-top: 60px;
-	width: 100%;
-	z-index: 99;
-	margin-left: auto;
-	margin-right: auto;
-	line-height: 1; /* Prevents extra spacing caused by line height */
-	font-size: 2.5rem; /* Adjust font size as needed */
-	font-weight: bold; /* Ensure the text is bold */
-	text-transform: uppercase; /* Optional: Make the text uppercase */
-	padding: 0; /* Ensure no padding affects centering */
+    background-color: var(--main-blue);
+    color: var(--white);
+    text-align: center;
+    height: 100px; /* Ensure enough height for centering */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    position: relative;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    width: 100%;
+    z-index: 99;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.5rem; /* Adjust font size as needed */
+    font-weight: bold; /* Ensure the text is bold */
+    text-transform: uppercase; /* Optional: Make the text uppercase */
+    padding: 0; /* Ensure no padding affects centering */
+}
+/* Centering the card layout */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Styling individual cards */
+  .card {
+    width: 250px;
+    height: 306px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Card Sections */
+  .card .top,
+  .card .bottom {
+    height: 33%;
+    flex-shrink: 0;
+  }
+
+  .card .middle {
+    height: 34%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(254, 253, 253);
+    border: 1px solid var(--main-blue);
+  }
+
+  /* Example image card styling */
+  .image-card .middle {
+    background: none;
+  }
+  .image-card .middle img {
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  /* Color schemes for card types */
+  .card.blue .top,
+  .card.blue .bottom {
+    background: #003cff;
+  }
+  .card.green .top,
+  .card.green .bottom {
+    background: #28d763;
+  }
+    
+  .follow-us-container {
+    background-color: #4CD964;
+    border-radius: 25px;
+    width: 700px;
+    height: 112px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+
 }
 
-.offers-header h1 {
-	color: var(--white);
-	font-size: 3.7rem;
-	background-color: transparent; /* Remove background if unnecessary */
-	font-weight: bold;
-	text-transform: uppercase;
-	margin: 0; /* Remove default margin */
-	line-height: 1; /* Prevent extra spacing */
-}
-/* Wrapper for the three cards */
-.offer-cards {
-	display: flex;
-	flex-wrap: wrap; /* Allows wrapping on smaller screens */
-	justify-content: center; /* Centers the cards horizontally */
-	gap: 50px; /* Space between cards */
+.follow-us-title {
+    color: white;
+    font-size: 24;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-/* Each individual card container */
-.offer-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 250px; /* Adjust as needed */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* The text below each box */
-.offer-card p {
-	color: var(--main-blue);
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 2.3rem;
-	margin-top: 30px;
-	text-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
 }
 
-/* The gray box */
-.offer-image {
-	background-color: #cccccc;
-	width: 100%;
-	height: 400px; /* Adjust as needed */
-	border: 1px solid #999999;
-	margin-bottom: 10px;
-	display: flex; /* Ensures the image aligns properly */
-	justify-content: center; /* Centers the image horizontally */
-	align-items: center; /* Centers the image vertically */
-	overflow: hidden; /* Ensures any overflow is hidden */
+.social-icon i {
+    font-size: 30px;
+    color: #4CD964;
 }
 
-.offer-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* Ensures the image covers the container without stretching */
-	object-position: center; /* Centers the image within the container */
-}
+
+
 
 /* Feedback Section */
 .feedback-section {
@@ -941,7 +1012,9 @@ button {
 	text-align: center;
 	margin-top: 60px;
 	margin-bottom: 60px;
-	background-color: #f5f5f5;
+	background-color: #f8f3f3;
+	position: relative;
+	
 }
 
 .feedback-title {
