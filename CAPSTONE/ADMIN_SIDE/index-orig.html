@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baliwag Business Admin Panel</title>
+    <link rel="stylesheet" href="style-orig.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for the business chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button id="mobile-menu-toggle" class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index-orig.html" class="header-logo">
+                    <div class="logo-circle">
+                        <img src="img/webheaderlogo.png" alt="Baliwag City Logo">
+                    </div>
+                    <span class="header-title">BALIWAG CITY: Event and Business Admin</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="icon-button">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="icon-button dropdown-toggle">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">My Account</div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-body">
+            <!-- Sidebar -->
+            <aside class="admin-sidebar" id="admin-sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-item active">
+                        <i class="fas fa-th-large sidebar-icon"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <div class="sidebar-dropdown">
+                        <button class="sidebar-item sidebar-dropdown-toggle">
+                            <div class="sidebar-item-content">
+                                <i class="fas fa-building sidebar-icon"></i>
+                                <span>Businesses</span>
+                            </div>
+                            <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                        </button>
+                        <div class="sidebar-dropdown-menu">
+                            <a href="businesses.html" class="sidebar-subitem">All Businesses</a>
+                            <a href="businesses.html" class="sidebar-subitem">Pending Approval</a>
+                            <a href="businesses.html" class="sidebar-subitem">Approved</a>
+                            <a href="businesses.html" class="sidebar-subitem">Rejected</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-dropdown">
+                        <button class="sidebar-item sidebar-dropdown-toggle">
+                            <div class="sidebar-item-content">
+                                <i class="fas fa-calendar sidebar-icon"></i>
+                                <span>Events</span>
+                            </div>
+                            <i class="fas fa-chevron-down sidebar-dropdown-icon"></i>
+                        </button>
+                        <div class="sidebar-dropdown-menu">
+                            <a href="events.html" class="sidebar-subitem">All Events</a>
+                            <a href="events.html" class="sidebar-subitem">Create Event</a>
+                            <a href="events.html" class="sidebar-subitem">Calendar</a>
+                        </div>
+                    </div>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-map-location-dot sidebar-icon"></i>
+                        <span>Tourist Spot</span>
+                    </a>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-bullhorn sidebar-icon"></i>
+                        <span>Announcements</span>
+                    </a>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-message sidebar-icon"></i>
+                        <span>Chat</span>
+                    </a>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-users sidebar-icon"></i>
+                        <span>Users</span>
+                    </a>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-chart-bar sidebar-icon"></i>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="#" class="sidebar-item">
+                        <i class="fas fa-cog sidebar-icon"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="help-box">
+                        <p class="help-title">Need help?</p>
+                        <p class="help-text">Check our documentation</p>
+                        <a href="#" class="help-button">View Docs</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="admin-main">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <p class="text-muted">Welcome back! Here's an overview of your business management system.</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <div class="stats-content">
+                            <div>
+                                <p class="stats-title">Total Businesses</p>
+                                <p class="stats-value">248</p>
+                            </div>
+                            <div class="stats-icon stats-icon-primary">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                        <p class="stats-description">+12% from last month</p>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-content">
+                            <div>
+                                <p class="stats-title">Pending Approvals</p>
+                                <p class="stats-value">18</p>
+                            </div>
+                            <div class="stats-icon stats-icon-warning">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <p class="stats-description">5 new since yesterday</p>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-content">
+                            <div>
+                                <p class="stats-title">Approved</p>
+                                <p class="stats-value">204</p>
+                            </div>
+                            <div class="stats-icon stats-icon-success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <p class="stats-description">86% approval rate</p>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-content">
+                            <div>
+                                <p class="stats-title">Rejected</p>
+                                <p class="stats-value">26</p>
+                            </div>
+                            <div class="stats-icon stats-icon-danger">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                        <p class="stats-description">14% rejection rate</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="overview">Overview</button>
+                        <button class="tab-button" data-tab="analytics">Analytics</button>
+                        <button class="tab-button" data-tab="reports">Reports</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content active" id="overview">
+                        <div class="grid-layout">
+                            <div class="card chart-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <span>Business Applications</span>
+                                        <i class="fas fa-chart-bar text-muted"></i>
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="businessChart" height="350"></canvas>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <span>Recent Applications</span>
+                                        <i class="fas fa-users text-muted"></i>
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="recent-businesses">
+                                        <div class="business-item">
+                                            <div class="business-info">
+                                                <p class="business-name">Tech Solutions Inc</p>
+                                                <p class="business-owner">Sarah Williams</p>
+                                                <div class="business-meta">
+                                                    <span class="status-badge status-pending">Pending</span>
+                                                    <span class="business-date">Today, 9:15 AM</span>
+                                                </div>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                        <div class="business-item">
+                                            <div class="business-info">
+                                                <p class="business-name">Green Thumb Nursery</p>
+                                                <p class="business-owner">David Johnson</p>
+                                                <div class="business-meta">
+                                                    <span class="status-badge status-approved">Approved</span>
+                                                    <span class="business-date">Yesterday, 2:30 PM</span>
+                                                </div>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                        <div class="business-item">
+                                            <div class="business-info">
+                                                <p class="business-name">Fitness First Gym</p>
+                                                <p class="business-owner">Michael Brown</p>
+                                                <div class="business-meta">
+                                                    <span class="status-badge status-pending">Pending</span>
+                                                    <span class="business-date">Yesterday, 10:45 AM</span>
+                                                </div>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                        <div class="business-item">
+                                            <div class="business-info">
+                                                <p class="business-name">Gourmet Delights</p>
+                                                <p class="business-owner">Robert Martinez</p>
+                                                <div class="business-meta">
+                                                    <span class="status-badge status-rejected">Rejected</span>
+                                                    <span class="business-date">Apr 5, 2023</span>
+                                                </div>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-layout">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Upcoming Events</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="upcoming-events">
+                                        <div class="event-item">
+                                            <div class="event-info">
+                                                <p class="event-name">Business Expo 2023</p>
+                                                <div class="event-meta">
+                                                    <i class="fas fa-calendar text-muted"></i>
+                                                    <span class="event-date">Jun 15, 2023</span>
+                                                </div>
+                                                <p class="event-location">City Convention Center</p>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-info">
+                                                <p class="event-name">Tech Startup Meetup</p>
+                                                <div class="event-meta">
+                                                    <i class="fas fa-calendar text-muted"></i>
+                                                    <span class="event-date">May 20, 2023</span>
+                                                </div>
+                                                <p class="event-location">Innovation Hub</p>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-info">
+                                                <p class="event-name">Entrepreneurship Summit</p>
+                                                <div class="event-meta">
+                                                    <i class="fas fa-calendar text-muted"></i>
+                                                    <span class="event-date">Jul 5, 2023</span>
+                                                </div>
+                                                <p class="event-location">Grand Hotel</p>
+                                            </div>
+                                            <button class="button button-outline">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Business Categories</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="categories">
+                                        <div class="category-item">
+                                            <div class="category-header">
+                                                <span class="category-name">Retail</span>
+                                                <span class="category-count">86 businesses</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 35%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="category-item">
+                                            <div class="category-header">
+                                                <span class="category-name">Food & Beverage</span>
+                                                <span class="category-count">64 businesses</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 26%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="category-item">
+                                            <div class="category-header">
+                                                <span class="category-name">Services</span>
+                                                <span class="category-count">42 businesses</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 17%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="category-item">
+                                            <div class="category-header">
+                                                <span class="category-name">Technology</span>
+                                                <span class="category-count">28 businesses</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 11%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="category-item">
+                                            <div class="category-header">
+                                                <span class="category-name">Others</span>
+                                                <span class="category-count">28 businesses</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 11%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="analytics">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Analytics</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Detailed analytics content will be displayed here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="reports">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Reports</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Generated reports will be displayed here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="img/webheaderlogo.png" alt="Baliwag City Logo">
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <p>Loading Admin Panel...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
