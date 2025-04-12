@@ -1,0 +1,30 @@
+
+
+  body {
+    height: 100vh;
+    background-color: #999; /* gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .success-box {
+    background-color: #0d22b5; /* blue box */
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .success-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+
+  .success-text {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
